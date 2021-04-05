@@ -12,6 +12,7 @@ min_value = 0
 #Import CSV data
 import os
 import csv
+
 budgetCSV = os.path.join("Resources","budget_data.csv")
 
 
@@ -61,4 +62,20 @@ min_date = dates[min_index]
 print("Greatest Decrease in Profits: " + str(min_date) + " ($" + str(min_value) + ")")
 
 #print the analysis to the terminal
+output_path = os.path.join("analysis", "PyBank_Report.txt")
 
+txtwriter = open(output_path, "w")
+txtwriter.write("Financial Analysis")
+txtwriter.write("\n")
+txtwriter.write("------------------------------------")
+txtwriter.write("\n")
+txtwriter.write("Total Months: "+ str(months))
+txtwriter.write("\n")
+txtwriter.write("Total: $" + str(total_values))
+txtwriter.write("\n")
+txtwriter.write("Average Change: $" + str(round(avg_change,2)))
+txtwriter.write("\n")
+txtwriter.write("Greatest Increase in Profits: " + str(max_date) + " ($" + str(max_value) + ")")
+txtwriter.write("\n")
+txtwriter.write("Greatest Decrease in Profits: " + str(min_date) + " ($" + str(min_value) + ")")
+txtwriter.close()
