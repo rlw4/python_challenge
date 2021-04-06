@@ -1,4 +1,4 @@
-print("I have reached main.py")
+
 num_of_rows = 0
 months = 0
 dates = []
